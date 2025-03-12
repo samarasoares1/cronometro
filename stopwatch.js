@@ -43,21 +43,18 @@ document.getElementById('play').addEventListener('click', play)
 var hour = 0
 var minute = 0
 var second = 0 
-var millisencond = 0
+var millisecond = 0
 
 var cron
 
-document.form_main.reset.onclick =  reset()
-document.form_main.start.onclick =  start()
-document.form_main.pause.onclick =  pause()
 
 function start() {
     pause();
-    cron = setInterval(() => { timer(); }, 10);
+    cron = setInterval(() => { timer(); }, 10)
   }
   
   function pause() {
-    clearInterval(cron);
+    clearInterval(cron)
   }
   
   function reset() {
@@ -65,29 +62,29 @@ function start() {
     minute = 0;
     second = 0;
     millisecond = 0;
-    document.getElementById('hour').innerText = '00';
-    document.getElementById('minute').innerText = '00';
-    document.getElementById('second').innerText = '00';
-    document.getElementById('millisecond').innerText = '000';
+    document.getElementById('hour').innerText = '00'
+    document.getElementById('minute').innerText = '00'
+    document.getElementById('second').innerText = '00'
+    document.getElementById('millisecond').innerText = '000'
   }
 
   function timer() {
     if ((millisecond += 10) == 1000) {
-      millisecond = 0;
-      second++;
+      millisecond = 0
+      second++
     }
     if (second == 60) {
-      second = 0;
-      minute++;
+      second = 0
+      minute++
     }
     if (minute == 60) {
-      minute = 0;
-      hour++;
+      minute = 0
+      hour++
     }
-    document.getElementById('hour').innerText = returnData(hour);
-    document.getElementById('minute').innerText = returnData(minute);
-    document.getElementById('second').innerText = returnData(second);
-    document.getElementById('millisecond').innerText = returnData(millisecond);
+    document.getElementById('hour').innerText = returnData(hour)
+    document.getElementById('minute').innerText = returnData(minute)
+    document.getElementById('second').innerText = returnData(second)
+    document.getElementById('millisecond').innerText = returnData(millisecond)
   }
   
   function returnData(input) {
