@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stopwatch</title>
     <link rel="stylesheet" href="estilos/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=play_arrow" />
     
 </head>
 <body>
-    <section>
-        <div id="timer">
-            <h2>00.00.00.00</h2>
-        </div>
-        <div id="action">
-            <input id="reset" type="button" value="Reset" onclick="reset()">
-            <input id="play" type="button" value="Play" onclick="play()">
-        </div>
-    </section>
+    <form name="form_main">
+        <section>
+            <div id="timer">
+                <h2>
+                <div>
+                    <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
+                </div>
+                </h2>
+            </div>
+            <div id="action">
+                <input id="play" type="button" value="Play" onclick="play()">
+                <input id="pause" type="button" value="Pause" onclick="pause()">
+                <input id="reset" type="button" value="Reset" onclick="reset()">
+            </div>
+        </section>
+    </form>
     <script src="stopwatch.js"></script>
 </body>
 </html>

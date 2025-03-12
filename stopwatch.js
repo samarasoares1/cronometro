@@ -1,4 +1,4 @@
-const timerEl = document.getElementById('timer')
+/*const timerEl = document.getElementById('timer')
 
 var intervalId = 0;
 var timer = 0;
@@ -17,7 +17,7 @@ function setTimer(time){
 }
 function play(){
     var bottom = document.getElementById('play')
-    var action = document.querySelector('action')
+    var action = button.getAttribute('action')
 
     clearInterval(interalId)
     if(action == 'start' || action == 'continue'){
@@ -37,3 +37,61 @@ function setTimer(time){
     timerEl.innerHTML = formatTime(time)
 }
 document.getElementById('play').addEventListener('click', play)
+*/
+
+"use strict"
+var hour = 0
+var minute = 0
+var second = 0 
+var millisencond = 0
+
+var cron
+
+document.form_main.reset.onclick =  reset()
+document.form_main.start.onclick =  start()
+document.form_main.pause.onclick =  pause()
+
+function start() {
+    pause();
+    cron = setInterval(() => { timer(); }, 10);
+  }
+  
+  function pause() {
+    clearInterval(cron);
+  }
+  
+  function reset() {
+    hour = 0;
+    minute = 0;
+    second = 0;
+    millisecond = 0;
+    document.getElementById('hour').innerText = '00';
+    document.getElementById('minute').innerText = '00';
+    document.getElementById('second').innerText = '00';
+    document.getElementById('millisecond').innerText = '000';
+  }
+
+  function timer() {
+    if ((millisecond += 10) == 1000) {
+      millisecond = 0;
+      second++;
+    }
+    if (second == 60) {
+      second = 0;
+      minute++;
+    }
+    if (minute == 60) {
+      minute = 0;
+      hour++;
+    }
+    document.getElementById('hour').innerText = returnData(hour);
+    document.getElementById('minute').innerText = returnData(minute);
+    document.getElementById('second').innerText = returnData(second);
+    document.getElementById('millisecond').innerText = returnData(millisecond);
+  }
+  
+  function returnData(input) {
+    return input > 10 ? input : `0${input}`
+  }
+
+
