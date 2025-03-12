@@ -47,8 +47,9 @@ div#action{
     text-align: center; 
 }
 input[type='button']{
+    width: 70px;
+    height: 40px;
     font-size: 0.8em;
-    font-family: 'Lemonmilk';
     font-weight: lighter;
     padding: 10px;
     background-color: #7d2bc4;
